@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Vacation Adventure 🌴</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Onboarding View -->
+        <div id="view-onboarding" class="hidden">
+            <div class="onboarding-card">
+                <h1>Welcome, Explorer! 🚀</h1>
+                <p>Let's plan your amazing 15-day vacation.</p>
+                
+                <form id="onboarding-form">
+                    <div class="form-group">
+                        <label>What's your name?</label>
+                        <input type="text" id="inp-name" required placeholder="Enter name...">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>How old are you?</label>
+                        <input type="number" id="inp-age" required min="4" max="18" placeholder="Age">
+                    </div>
+
+                    <div class="form-group">
+                        <label>School Level</label>
+                        <select id="inp-level">
+                            <option value="primary">Primary School (الابتدائي)</option>
+                            <option value="middle">Middle School (المتوسط)</option>
+                            <option value="high">High School (الثانوي)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Languages to Practice</label>
+                        <div class="checkbox-group">
+                            <label><input type="checkbox" id="lang-ar" checked> Arabic</label>
+                            <label><input type="checkbox" id="lang-en" checked> English</label>
+                            <label><input type="checkbox" id="lang-fr"> French</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Create My Plan! ✨</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Dashboard View -->
+        <div id="view-dashboard" class="hidden">
+            <header>
+                <div class="welcome-text">
+                    <h2>Hello, <span id="user-name-display">Friend</span>! 👋</h2>
+                    <p>Here is your mission plan.</p>
+                </div>
+                <div class="progress-container">
+                    <div id="progress-fill" class="progress-bar"></div>
+                </div>
+                <p id="progress-text" style="font-size: 14px; color: #888;">0 / 15 Days Completed</p>
+            </header>
+
+            <div id="timeline-container" class="timeline">
+                <!-- Day Cards will be inserted here by JS -->
+            </div>
+
+            <footer>
+                <p>Parent Mode: <button class="btn-small" onclick="alert('To edit the plan manually, edit the tasks in the code or clear data to reset.')">Edit Settings</button></p>
+                <button class="btn-small" style="color: red; border-color: red;" onclick="if(confirm('Reset all progress?')) resetApp()">Reset Data</button>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
